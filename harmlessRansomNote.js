@@ -1,10 +1,15 @@
 function harmlessRansomNote(magazine, note) {
   const magazineWords = convertToIndexedObject(magazine);
-  const noteWords = convertToIndexedObject(note);
-
-  for (let key of Object.keys(noteWords)) {
-    if (!magazineWords[key]) return false;
-    if (magazineWords[key] < noteWords[key]) return false;
+  const noteArray = note.split(' ');
+  for(let i = 0; i < noteArray.length; i++) {
+    const noteWord = noteArray[i];
+    if (magazineWords[noteWord] === undefined) {
+      return false;
+    }
+    if (magazineWords[noteWord] === 0) {
+      return false;
+    }
+    magazineWords[noteWord] = magazineWords[noteWord] - 1;
   }
 
   return true;

@@ -45,4 +45,3 @@ test('A true harmlessRansomNote test', () => {
   `
   expect(harmlessRansomNote(magazine, note)).toBe(false);
 });
-
