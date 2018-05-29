@@ -5,6 +5,7 @@ In this repo I study essential algorithms in Javascript.
 ## Dependencies
 
 `node`
+
 `npm` or `yarn`
 
 ## Install
