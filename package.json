@@ -1,0 +1,14 @@
+{
+  "name": "learning-algorithms-in-javascript-from-scratch",
+  "version": "1.0.0",
+  "description": "Code for the Learning Algorithm in Javascript from Scratch Udemy Course",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Gustavo Saiani ",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^23.0.1"
+  }
+}
