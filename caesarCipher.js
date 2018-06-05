@@ -6,13 +6,18 @@ function caesarCipher(string, number) {
   let cipherArray = [];
 
   charsArray.forEach(char => {
-    const charPosition = allowedCharactersArray.indexOf(char);
+    const lowerCaseChar = char.toLowerCase();
+    const charPosition = allowedCharactersArray.indexOf(lowerCaseChar);
+    let newChar;
 
     if (charPosition > -1) {
-      cipherArray.push(allowedCharactersArray[(charPosition + number) % allowedCharactersArray.length]);
+      const newAgnosticCaseChar = allowedCharactersArray[(charPosition + number) % allowedCharactersArray.length];
+      newChar = (char == char.toUpperCase()) ? newAgnosticCaseChar.toUpperCase() : newAgnosticCaseChar;
     } else {
-      cipherArray.push(char);
+      newChar = char;
     }
+
+    cipherArray.push(newChar);
   });
 
   return cipherArray.join('');
