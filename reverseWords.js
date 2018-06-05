@@ -18,4 +18,18 @@ function reverseWordsWithoutArrayReverse(string) {
   }).join(' ');
 }
 
-module.exports = reverseWordsWithoutArrayReverse;
+function reverseWordsWithReduce(string) {
+  return string
+    .split(' ')
+    .map(word => {
+      return word
+        .split('')
+        .reduce((acc, letter) => {
+          acc.unshift(letter);
+          return acc;
+        }, [])
+        .join('');
+    }).join(' ');
+}
+
+module.exports = reverseWordsWithReduce;
