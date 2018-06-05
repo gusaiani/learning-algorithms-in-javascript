@@ -11,7 +11,7 @@ function reverseWordsWithoutArrayReverse(string) {
 
   return wordArray.map(word => {
     let reversedWordArray = [];
-    for (let i = word.length; i >= 0; i--) {
+    for (let i = word.length - 1; i >= 0; i--) {
       reversedWordArray.push(word[i]);
     }
     return reversedWordArray.join('');
@@ -32,4 +32,4 @@ function reverseWordsWithReduce(string) {
     }).join(' ');
 }
 
-module.exports = reverseWordsWithReduce;
+module.exports = reverseWordsWithoutArrayReverse;
