@@ -1,6 +1,6 @@
 function getMean(arr) {
   const sum = arr.reduce((acc, item) => {return acc + item}, 0)
-  return sum / arr.length;
+  return parseFloat((sum / arr.length).toFixed(4));
 }
 
 function getMedian(arr) {
@@ -10,17 +10,17 @@ function getMedian(arr) {
 
   if (isArrayLengthEven) {
     const arrayHalfLength = arr.length / 2
-    const firstItem = arr[Math.floor(arrayHalfLength)];
-    const secondItem = arr[Math.ceil(arrayHalfLength)];
+    const firstItem = arr[arrayHalfLength - 1];
+    const secondItem = arr[arrayHalfLength];
     return (firstItem + secondItem) / 2;
   } else {
-    return arr[arr.length / 2]
+    return arr[Math.floor(arr.length / 2)];
   }
 }
 
 function getMode(arr) {
   let occurrences = {};
-  let mostFrequent, frequency = 0;
+  let mostFrequent = [], frequency = 0;
 
   arr.forEach(item => {
     if (occurrences['' + item]) {
@@ -32,12 +32,16 @@ function getMode(arr) {
 
   Object.keys(occurrences).forEach(key => {
     if (occurrences[key] > frequency) {
-      mostFrequent = key;
+      mostFrequent = [parseFloat(key)];
       frequency = occurrences[key]
+    } else if (occurrences[key] == frequency) {
+      if (mostFrequent.indexOf(key) == -1) {
+        mostFrequent.push(parseFloat(key))
+      }
     }
   })
 
-  return parseFloat(mostFrequent);
+  return mostFrequent;
 }
 
 function meanMedianMode(arr) {
