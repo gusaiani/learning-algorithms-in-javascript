@@ -4,7 +4,7 @@ function getMean(arr) {
 }
 
 function getMedian(arr) {
-  const sorted = arr.sort();
+  arr.sort(function(a, b) { return a-b });
   const arrLength = arr.length;
   const isArrayLengthEven = (arrLength % 2 == 0) ? true : false;
 
