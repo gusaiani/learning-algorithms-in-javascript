@@ -41,6 +41,10 @@ function getMode(arr) {
     }
   })
 
+  if (mostFrequent.length === Object.keys(occurrences).length) {
+    mostFrequent = [];
+  }
+
   return mostFrequent;
 }
 
