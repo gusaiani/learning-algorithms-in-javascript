@@ -23,10 +23,10 @@ function getMode(arr) {
   let mostFrequent = [], frequency = 0;
 
   arr.forEach(item => {
-    if (occurrences['' + item]) {
-      occurrences['' + item]++;
+    if (occurrences[item]) {
+      occurrences[item]++;
     } else {
-      occurrences['' + item] = 1;
+      occurrences[item] = 1;
     }
   });
 
