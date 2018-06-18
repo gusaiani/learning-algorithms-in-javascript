@@ -1,5 +1,4 @@
 function binarySearch(arr, item) {
-  console.log('arr', arr);
   const middleOfArray = Math.floor(arr.length / 2);
 
   const middleItem = arr[middleOfArray];
