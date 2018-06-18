@@ -1,30 +1,19 @@
-function binarySearch(arr, key) {
-  const arrayHalfLength = Math.floor(arr.length / 2)
-  const middleElement = arr[arrayHalfLength];
+function binarySearch(arr, item) {
+  console.log('arr', arr);
+  const middleOfArray = Math.floor(arr.length / 2);
 
-  if (middleElement === key)  {
-    return true;
-  } else if (arr.length === 1) {
-    return false;
-  } else if (key > middleElement) {
-    return binarySearch(arr.splice(arrayHalfLength, arr.length), key)
-  } else {
-    return binarySearch(arr.splice(0, arrayHalfLength), key)
+  const middleItem = arr[middleOfArray];
+
+  if (item === middleItem) return true
+  else if (arr.length === 1) return false
+  else if (item > middleItem) {
+    const halfArray = arr.splice(middleOfArray + 1, arr.length);
+    return binarySearch(halfArray, item);
+  } else if (item < middleItem) {
+    const halfArray = arr.splice(0, middleOfArray);
+    return binarySearch(halfArray, item);
   }
-}
-
-function kindOfABinarySearch(arr, key) {
-  const halfArray = arr.slice(Math.floor(arr.length / 2));
-
-  if (halfArray.indexOf(key) > -1) {
-    return true;
-  } else if (arr.length === 1) {
-    return false;
-  } else {
-    const otherHalf = arr.slice(Math.floor(-arr.length / 2));
-    return binarySearch(otherHalf);
-  }
+  return false;
 }
 
 module.exports = binarySearch;
-
