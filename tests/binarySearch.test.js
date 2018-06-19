@@ -1,6 +1,6 @@
 const binarySearch = require('../binarySearch');
 
-test.only('A true binarySearch test', () => {
+test('A true binarySearch test', () => {
   expect(binarySearch([5, 7, 12, 16, 36, 39, 42, 56, 71], 16)).toBe(true);
 });
 
