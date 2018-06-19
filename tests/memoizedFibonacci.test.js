@@ -1,10 +1,14 @@
 const fibonacci = require('../memoizedFibonacci');
 
+test('At position 2', () => {
+  expect(fibonacci(2)).toEqual(1);
+});
+
 test('At position 3', () => {
   expect(fibonacci(3)).toEqual(2);
 });
 
-test('At position 4', () => {
+test.only('At position 4', () => {
   expect(fibonacci(4)).toEqual(3);
 });
 
