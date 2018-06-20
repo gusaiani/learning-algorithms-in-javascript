@@ -28,7 +28,7 @@ function betterSieve(num) {
   arr[0] = arr[1] = false
 
   // Multiply each index in array by 2, 3, until result is larger than num. Mark each result with false because they aren't prime.
-  for(let i = 2; i < Math.floor(Math.sqrt(num)); i++) {
+  for(let i = 2; i < Math.sqrt(num); i++) {
     let multiplier = 2;
 
     while ((i * multiplier) <= num) {
