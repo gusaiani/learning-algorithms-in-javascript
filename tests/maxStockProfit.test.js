@@ -14,3 +14,13 @@ test('No profit should return -1', () => {
   const arr = [6, 5, 4, 3, 2, 1];
   expect(maxStockProfit(arr)).toEqual(-1);
 });
+
+test('A profit of zero should return zero', () => {
+  const arr = [5, 5, 5, 5, 4];
+  expect(maxStockProfit(arr)).toEqual(0);
+});
+
+test('A profit of zero should return zero', () => {
+  const arr = [5, 5, 4, 4, 4];
+  expect(maxStockProfit(arr)).toEqual(0);
+});
